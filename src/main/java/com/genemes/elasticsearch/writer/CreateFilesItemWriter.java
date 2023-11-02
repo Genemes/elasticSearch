@@ -17,7 +17,7 @@ public class CreateFilesItemWriter implements ItemWriter<CdrSessionId> {
 
     @Override
     public void write(List<? extends CdrSessionId> items) throws Exception {
-        String outputPath = "C:/Users/Genemes/Documents/Estudo/elasticsearch/out/saida_" + currentFileCount + ".csv";
+        String outputPath = DIRECTORY_PATH + "batch_" + currentFileCount + ".csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath))) {
             String line = items.stream()
